@@ -1,0 +1,30 @@
+encodeshellcode-0.1b.tar.gz
+---------------------------
+
+	If you're dealing with a character filter or byte restriction in a buffer overflow 
+vulnerability or some kind of IDS/IPS/AV blocking your code, you can use this encoder for 
+encoding your 32-bit x86 shellcode.
+
+	This technique was used by muts from offensive security. As a summary, shellcode is 
+divided into small subsets then using arithmetic or logical operators we rebuild the shellcode 
+to some place on the stack. Doing this by hand is very time consuming and error prone so i've 
+created this simple encoder, i hope it'll be useful for you too. You can add new instruction 
+sets to source code if you ever need. 
+
+Required arguments:
+	-a <file>            : Available chars file.
+	-s <file>            : Shellcode file.
+	-o <file>            : Output file for new shellcode.
+Optional arguments:
+	-i <instruction set> : Instruction set to use. (0=auto (default), 1=first, 2=second, etc.) (2 instruction sets available.)
+	-t <offset>          : Offset from ESP.
+	-v                   : Verbose/debug mode.
+	-h                   : This help.
+
+
+------------------
+
+Melih SARICA
+msarica@btsec.net
+ms@sevure.com
+
